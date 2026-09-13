@@ -1,0 +1,95 @@
+import { hasItem } from '../engine/character.js';
+
+// Succès propres à *La Clé des Cryptes* (objets trouvés/utilisés, exploration).
+// Les succès "Fins découvertes" sont générés séparément (voir achievementsShared.js).
+export const CRYPTES_ACHIEVEMENTS = [
+  {
+    id: 'objet-torche',
+    icon: '🔥',
+    category: 'Objets trouvés',
+    title: 'Une lumière dans le noir',
+    description: 'Trouver la torche.',
+    check: (state) => hasItem(state.character, 'torche'),
+  },
+  {
+    id: 'objet-dague',
+    icon: '🗡️',
+    category: 'Objets trouvés',
+    title: 'Lame héritée',
+    description: 'Trouver la dague d\'argent.',
+    check: (state) => hasItem(state.character, 'dague_argent'),
+  },
+  {
+    id: 'objet-amulette',
+    icon: '✨',
+    category: 'Objets trouvés',
+    title: 'Bénédiction oubliée',
+    description: 'Trouver l\'amulette bénie.',
+    check: (state) => hasItem(state.character, 'amulette_lumiere'),
+  },
+  {
+    id: 'objet-clochette',
+    icon: '🔔',
+    category: 'Objets trouvés',
+    title: 'Écho d\'argent',
+    description: 'Trouver la clochette d\'argent.',
+    check: (state) => hasItem(state.character, 'clochette_argent'),
+  },
+  {
+    id: 'objet-complet',
+    icon: '🎒',
+    category: 'Objets trouvés',
+    title: 'Collectionneur',
+    description: 'Porter les 4 objets optionnels en même temps.',
+    check: (state) =>
+      ['torche', 'dague_argent', 'amulette_lumiere', 'clochette_argent'].every((id) => hasItem(state.character, id)),
+  },
+  {
+    id: 'usage-torche',
+    icon: '🕯️',
+    category: 'Objets utilisés',
+    title: 'Éclaireur',
+    description: 'Utiliser la torche pour repérer un piège ou une dalle fissurée.',
+    check: (state) => state.currentId === 17 || state.currentId === 210,
+  },
+  {
+    id: 'usage-dague',
+    icon: '⚔️',
+    category: 'Objets utilisés',
+    title: 'Frappe silencieuse',
+    description: 'Vaincre le Sorcier Déchu grâce à la dague d\'argent.',
+    check: (state) => state.currentId === 40,
+  },
+  {
+    id: 'usage-amulette',
+    icon: '💡',
+    category: 'Objets utilisés',
+    title: 'Lumière repoussante',
+    description: 'Chasser le Sorcier Déchu avec l\'amulette bénie.',
+    check: (state) => state.currentId === 42,
+  },
+  {
+    id: 'usage-clochette',
+    icon: '🔊',
+    category: 'Objets utilisés',
+    title: 'Tintement fatal',
+    description: 'Perturber le rituel du Sorcier Déchu avec la clochette d\'argent.',
+    check: (state) => state.currentId === 46,
+  },
+  {
+    id: 'usage-potion',
+    icon: '🧪',
+    category: 'Objets utilisés',
+    title: 'Premiers soins',
+    description: 'Boire une fiole de soin.',
+    check: (state) => state.stats.potionsUsed > 0,
+  },
+  {
+    id: 'cartographe',
+    icon: '🗺️',
+    category: 'Exploration',
+    title: 'Cartographe des cryptes',
+    description: 'Visiter tous les paragraphes du récit, toutes parties confondues.',
+    check: (state, context) => context.visitedCount >= context.totalParagraphs,
+  },
+];

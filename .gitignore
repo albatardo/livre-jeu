@@ -1,0 +1,11 @@
+# Assets fournis par l'utilisateur : seuls les fichiers réellement référencés
+# par le code (js/ui/audio.js, css/style.css) sont versionnés. Le reste
+# (sprites, packs de tuiles, musiques non utilisées) reste sur le disque mais
+# hors du dépôt pour ne pas alourdir l'historique git (~321 Mo au total).
+assets/*
+!assets/bg.png
+!assets/Dungeon_Deep.mp3
+!assets/Random Battle.mp3
+!assets/Boss_01.ogg
+!assets/Musica Universalis.ogg
+!assets/danger.ogg
