@@ -8,6 +8,8 @@ Livres dont vous êtes le héros classiques (paragraphes numérotés, arborescen
 
 **Projet frère indépendant** d'un roguelite personnel ("Les Cryptes Oubliées") — même univers dark fantasy, mais aucune génération procédurale ici : chaque récit est écrit entièrement à la main dans son propre fichier `js/data/<récit>-story.js`. Ne pas réintroduire de mécaniques roguelite (postures de combat, classes, XP, donjon procédural) — c'est précisément ce que ce projet évite.
 
+**Avant d'écrire ou de retoucher un récit, lire `STYLE_GUIDE.md`** — voix/ton, conventions de structure, calibrage de difficulté, et pièges d'ingénierie déjà rencontrés (zones à ponts, choix partageant un `targetId`) à ne pas reproduire.
+
 ## Lancer le projet
 
 ```
